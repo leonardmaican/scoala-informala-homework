@@ -52,34 +52,33 @@ public class PersonHobbyApp {
         peoplesHobbies.put(bob, bobsHobbies);
         peoplesHobbies.put(george, georgesHobbies);
 
-        Set peopleInMap = peoplesHobbies.keySet();
-        for (Object o : peopleInMap) {
-            Person p = (Person) o;
-            printHobbyAndCountry(p, peoplesHobbies.get(p));
-        }
+        printHobbyAndCountry(peoplesHobbies, bob);
 
 
     }
 
     /**
-     * This method prints the name of the person, the name of the hobby,
-     * the country where a hobby is being practiced and the frequency the hobby is practiced every week
-     *
-     * @param pers    the person for which the hobbies are printed
-     * @param hobbies the hobby to be extracted from the list
+     * This method checks if the person passed as an argument can be found in the map passed in the argument
+     * if the person is in the map, the method will print the person's hobby name and the countries where the hobby can be practiced
+     * @param map The map of people and their respective hobbies
+     * @param pers the person to be looked up in the map
      */
-    public static void printHobbyAndCountry(Person pers, List<Hobby> hobbies) {
 
-        for (Object o : hobbies) {
-            Hobby h = (Hobby) o;
-            List addressesList = h.getAddresses();
-            for (Object o1 : addressesList) {
-                Address a = (Address) o1;
-                System.out.println(pers.getName() + " likes to practice " + h.getName() + " in " + a.getCountry().getCountryName() + " " + h.getFrequency() + " times a week");
+    public static void printHobbyAndCountry(Map<Person, List<Hobby>> map, Person pers) {
+        if (map.keySet().contains(pers)) {
+            for (Object o : map.get(pers)) {
+                Hobby h = (Hobby) o;
+                List addressesList = h.getAddresses();
+                for (Object o1 : addressesList) {
+                    Address a = (Address) o1;
+                    System.out.println(pers.getName() + " likes to practice " + h.getName() + " in " + a.getCountry().getCountryName() + " " + h.getFrequency() + " times a week");
+
+                }
+
+
             }
+
+
         }
-
     }
-
-
 }

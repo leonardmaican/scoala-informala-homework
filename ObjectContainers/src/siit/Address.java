@@ -4,25 +4,25 @@ package siit;
  * This class instantiates an Address at which a hobby can be practiced
  */
 public class Address {
-    String streetAddress;
-    Country country;
+    private String street;
+    private Country country;
 
     @Override
     public String toString() {
         return "Address{" +
-                "streetAddress='" + streetAddress + '\'' +
+                "streetAddress='" + street + '\'' +
                 ", country=" + country +
                 '}';
     }
 
-    public Address(String streetAddress, Country country) {
-        this.streetAddress = streetAddress;
+    public Address(String street, Country country) {
+        this.street = street;
         this.country = country;
 
     }
 
-    public String getStreetAddress() {
-        return streetAddress;
+    public String getStreet() {
+        return street;
     }
 
     public Country getCountry() {

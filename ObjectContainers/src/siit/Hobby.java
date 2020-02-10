@@ -1,5 +1,7 @@
 package siit;
+
 import java.util.List;
+
 /**
  * This class instantiates a hobby
  */
@@ -14,6 +16,9 @@ public class Hobby {
         this.name = name;
         this.frequency = frequency;
         this.address = address;
+    }
+    public void addAddress(Address address){
+        this.address.add(address);
     }
 
     public String getName() {

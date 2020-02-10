@@ -4,27 +4,27 @@ package siit;
  * This class instantiates a country, used to create an address at which a hobby can be practiced
  */
 public class Country {
-    private String countryName;
-    private String countryCode;
+    private String name;
+    private String code;
 
     @Override
     public String toString() {
         return "Country{" +
-                "countryName= '" + countryName + '\'' +
-                ", countryCode='" + countryCode + '\'' +
+                "countryName= '" + name + '\'' +
+                ", countryCode='" + code + '\'' +
                 '}';
     }
 
     public Country(String countryName, String countryCode) {
-        this.countryName = countryName;
-        this.countryCode = countryCode;
+        this.name = countryName;
+        this.code = countryCode;
     }
 
     public String getCountryName() {
-        return countryName;
+        return name;
     }
 
     public String getCountryCode() {
-        return countryCode;
+        return code;
     }
 }
