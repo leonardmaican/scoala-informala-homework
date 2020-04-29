@@ -1,0 +1,26 @@
+/**
+The workbench queries
+*/
+create database booking;
+
+    create table accomodation(
+id int not null auto_increment,
+type varchar(32),
+bed_type varchar(32),
+max_guests int,
+description varchar(512),
+primary key(id));
+
+    create table room_fair(
+id int not null auto_increment,
+price double,
+season varchar(32),
+primary key (id));
+
+    create table accomodation_fair_relation(
+id int not null auto_increment,
+id_accomodation int,
+id_room_fair int,
+primary key (id),
+foreign key(id_accomodation) references accomodation(id),
+foreign key (id_room_fair) references room_fair(id));
